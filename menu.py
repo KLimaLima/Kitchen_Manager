@@ -1,19 +1,26 @@
-class Menu:
+import storage
 
-    def __init__(self, name, total_price, ingredient, recipe):
+class Food:
+
+    def __init__(self, name, total_price, storage, recipe):
         self.name = name
         self.total_price = total_price
-        self.ingredient = ingredient
+        self.ingredient = storage
         self.recipe = recipe
 
-class Food(Menu):
+class Meal(Food):
 
     def __init__(self, name, total_price, ingredient, recipe, food_type):
-        Menu.__init__(name, total_price, ingredient, recipe)
+        Food.__init__(name, total_price, ingredient, recipe)
         self.food_type = food_type
 
-class Beverage(Menu):
+class Beverage(Food):
 
     def __init__(self, name, total_price, ingredient, temperature):
-        Menu.__init__(name, total_price, ingredient)
+        Food.__init__(name, total_price, ingredient)
         self.temperature = temperature
+
+class Raw_Food(Food):
+
+    def __init__(self, name, total_price, storage, recipe):
+        super().__init__(name, total_price, storage, recipe)
