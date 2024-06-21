@@ -59,3 +59,26 @@ def write_csv_one_row(file_name, dict_data: dict):
     csv_write.writeheader()
     csv_write.writerow(dict_data) # use writerow because only one row
     writing.close()
+
+# generate file name
+def generate_file_name(file_type_without_dot: str, *args_names):
+
+    # take all name and combine them
+    base_file_name = "_".join(args_names)
+    
+    count = 0
+    # this imitates c++ do while
+    while True:
+
+        # create the FULL file name
+        file_name = f"{base_file_name}_{count}.{file_type_without_dot}"
+        
+        # check if there is already a file with that name
+        have_file = os.path.isfile(file_name)
+        if not have_file:
+            break
+
+        # increment counter to make a unique file name
+        count += 1
+
+    return base_file_name

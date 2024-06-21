@@ -23,4 +23,4 @@ class Beverage(Food):
 class Raw_Food(Food):
 
     def __init__(self, name, total_price, storage, recipe):
-        super().__init__(name, total_price, storage, recipe)
+        Food.__init__(name, total_price, storage, recipe)
