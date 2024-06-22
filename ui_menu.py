@@ -58,3 +58,17 @@ def ui_get_int_positive():
         print('Invalid input!\nPlease try again')
 
     return user_input
+
+def ui_boolean_yes_or_no():
+
+    while True:
+
+        user_input = input('[Y] Yes, [N] No: ')
+        user_input = user_input.upper()
+
+        if user_input in ('Y', 'N'):
+            break
+
+        print('Invalid input!\nPlease try again')
+
+    return user_input == 'Y'

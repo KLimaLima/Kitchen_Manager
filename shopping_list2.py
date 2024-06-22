@@ -1,19 +1,3 @@
-#-------------------------------------------------------------------------------
-# Name:        module2
-# Purpose:
-#
-# Author:      Acer
-#
-# Created:     21/06/2024
-# Copyright:   (c) Acer 2024
-# Licence:     <your licence>
-#-------------------------------------------------------------------------------
-
-def main():
-    pass
-
-if __name__ == '__main__':
-    main()
 class ShoppingList:
     def __init__(self):
         self.groceries = []  # List to store grocery items
@@ -43,8 +27,7 @@ class ShoppingList:
             print(f"Item: {item['name']}, Quantity: {item['quantity']}, Price per unit: ${item['price_per_unit']:.2f}")
         print(f"Total cost: ${self.calculate_total_cost():.2f}")
 
-# Example usage
-def main():
+def shopping_list_part():
     shopping_list = ShoppingList()
 
     while True:
@@ -79,6 +62,3 @@ def main():
 
         else:
             print("Invalid choice, please try again.")
-
-if __name__ == "__main__":
-    main()

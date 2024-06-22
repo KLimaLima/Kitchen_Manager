@@ -1,0 +1,15 @@
+Recipe: Chicken Stir Fry
+Ingredients: bawang, ayam, sayur, cili
+
+Recipe: Vegetable Fried Rice
+Ingredients: bawang, sayur, beras
+
+Recipe: Chicken Soup
+Ingredients: bawang, ayam, sayur
+
+Recipe: Plain Rice
+Ingredients: beras
+
+Recipe: Chicken Porridge
+Ingredients: ayam, beras, sayur, bawang
+

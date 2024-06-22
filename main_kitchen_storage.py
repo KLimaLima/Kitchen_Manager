@@ -88,3 +88,5 @@ def create_ingredient_main_storage():
         print('Invalid input!\nPlease try again')
 
     main_storage.save()
+
+    return create_ingredient

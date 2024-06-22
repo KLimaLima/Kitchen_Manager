@@ -26,6 +26,18 @@ def write_txt(file_name, array_data):
         writing.write(data)
     writing.close()
 
+def append_txt(file_name, array_data):
+
+    have_file = os.path.isfile(file_name)
+
+    if(not have_file):
+        write_txt(file_name= file_name, array_data= "")
+
+    appending = open(file_name, "a")
+    for data in array_data:
+        appending.write(data)
+    appending.close()
+
 # read a csv file that has only one row
 def read_csv_one_row(file_name):
     
@@ -61,7 +73,7 @@ def write_csv_one_row(file_name, dict_data: dict):
     writing.close()
 
 # generate file name
-def generate_file_name(file_type_without_dot: str, *args_names):
+def generate_file_name(file_type_without_dot, *args_names):
 
     # take all name and combine them
     base_file_name = "_".join(args_names)

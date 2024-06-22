@@ -1,6 +1,7 @@
 import file_reader
 
 KITCHEN_STORAGE = "kitchen_storage.csv"
+RECIPE_STORAGE = "recipe_storage.txt"
 
 # storage boleh dikira sebagai jumlah bahan2(utk recipe) yg diperlukan juga
 class Storage:
@@ -47,3 +48,30 @@ class Kitchen_Storage(Storage):
 
     def save(self):
         file_reader.write_csv_one_row(KITCHEN_STORAGE, self.__ingredient)
+
+class Recipe_Storage(Storage):
+
+    def __init__(self, ingredient: dict = dict(), name = 'recipe'):
+        self.__ingredient = ingredient
+        self.__name = name
+        
+        Storage.__init__(self, self.__ingredient)
+
+    def get_name(self):
+        return self.__name
+    
+    def save(self):
+        array_data = []
+
+        data_name = f'recipe:{self.get_name()}'
+        array_data.append(str(data_name))
+
+        for ingredient, amount in self.get_storage().items():
+            array_data.append('\n')
+            array_data.append(str(ingredient))
+            array_data.append('\n')
+            array_data.append(str(amount))
+
+        array_data.append('\n')
+
+        file_reader.append_txt(RECIPE_STORAGE, array_data)
