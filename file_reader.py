@@ -82,3 +82,13 @@ def generate_file_name(file_type_without_dot: str, *args_names):
         count += 1
 
     return base_file_name
+
+# this one reads csv file into dict and converts values into int
+def read_csv_one_row_value_int(file_name):
+
+    data_dict = read_csv_one_row(file_name)
+
+    for key, value in data_dict.items():
+        data_dict[key] = int(value)
+
+    return data_dict

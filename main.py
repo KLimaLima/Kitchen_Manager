@@ -1,10 +1,12 @@
 import file_reader
 import storage
+from ui_menu import ui_get_user_input
+from main_kitchen_storage import kitchen_storage_ui
 
-kitchen_storage = storage.Kitchen_Storage()
+test_kitchen_storage = storage.Kitchen_Storage()
 
 print("kitchen storage")
-print(kitchen_storage.get_storage())
+print(test_kitchen_storage.get_storage())
 
 ##############################################################
 
@@ -28,8 +30,37 @@ print(menu_ingredients.get_storage())
 
 # print(menu_ingredients.get_storage())
 
-print(menu_ingredients.write_data_csv("a_storage.csv"))
+print(menu_ingredients.save("a_storage.csv"))
 
-menu_ingredients.set_one("ikan", 2)
+menu_ingredients.set_ingredient_amount("ikan", 2)
 
 print(menu_ingredients.get_storage())
+
+##################################################################
+
+kitchen_storage = storage.Kitchen_Storage()
+
+while True:
+
+    # display menu and get user input
+    user_input = ui_get_user_input(A= 'Create Recipe', B= 'Find Recipe', C= 'Kitchen Storage', D= 'Print Shopping List')
+
+    if user_input == 'A':
+        print('a masuk')
+
+    elif user_input == 'B':
+        print('b masuk')
+
+    elif user_input == 'C':
+        kitchen_storage_ui()
+
+    elif user_input == 'D':
+        print('d masuk')
+
+    elif user_input == 'Z':
+        print('Closing program...')
+        break
+    
+    # just in case
+    else:
+        print('Invalid input!\nPlease try again')
