@@ -3,6 +3,8 @@ def ui_get_user_input(**kwargs_letter_message):
 
     while True:
 
+        print('')
+
         # this is the ui
         for letter, message in kwargs_letter_message.items():
             print(f'[{letter}] {message}')

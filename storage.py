@@ -54,11 +54,11 @@ class Kitchen_Storage(Storage):
 
 class Recipe_Storage(Storage):
 
-    def __init__(self, ingredient: dict = dict(), name = 'recipe'):
+    def __init__(self, ingredient: dict = dict(), name = 'no name'):
         self.__ingredient = ingredient
         self.__name = name
         
-        Storage.__init__(self, self.__ingredient)
+        Storage.__init__(self, ingredient)
 
     def set_name(self, name):
         self.__name = name
