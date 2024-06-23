@@ -18,6 +18,9 @@ class Storage:
     def set_ingredient_amount(self, ingredient, set_amount):
         self.__ingredient[ingredient] = set_amount
 
+    def set_ingredient_dict(self, ingredient:dict):
+        self.__ingredient = ingredient
+
     def del_ingredient(self, ingredient):
         del self.__ingredient[ingredient]
 
@@ -57,6 +60,9 @@ class Recipe_Storage(Storage):
         
         Storage.__init__(self, self.__ingredient)
 
+    def set_name(self, name):
+        self.__name = name
+
     def get_name(self):
         return self.__name
     
@@ -75,3 +81,8 @@ class Recipe_Storage(Storage):
         array_data.append('\n')
 
         file_reader.append_txt(RECIPE_STORAGE, array_data)
+
+    def reset_storage(self):
+
+        for ingredient in list(self.__ingredient):
+            del self.__ingredient[ingredient]

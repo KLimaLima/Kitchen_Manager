@@ -15,6 +15,10 @@ def read_txt(file_name):
     file_data = reading.readlines()
     reading.close()
 
+    for i in range(len(file_data)):
+        data_string = file_data[i]
+        file_data[i] = data_string[:-1]
+
     return file_data
 
 # write to a txt file

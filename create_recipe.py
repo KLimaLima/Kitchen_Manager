@@ -1,20 +1,20 @@
-from storage import Storage, Recipe_Storage
+from storage import Recipe_Storage
 from ui_menu import *
 from main_kitchen_storage import create_ingredient_main_storage
 
 def create_recipe_part():
 
-    recipe_name = input('\nEnter recipe name: ')
+    recipe_name = str(input('\nEnter recipe name: '))
 
-    ingredient_storage = adding_ingredient()
+    recipe = Recipe_Storage(name= recipe_name)    
 
-    recipe = Recipe_Storage(ingredient_storage.get_storage(), recipe_name)
+    ingredient_storage = adding_ingredient(recipe)
 
     recipe.save()
 
-def adding_ingredient():
+def adding_ingredient(recipe_storage:Recipe_Storage):
 
-    recipe_storage = Storage()
+    recipe_storage.reset_storage()
 
     while True:
         

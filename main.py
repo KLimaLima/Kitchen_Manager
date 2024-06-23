@@ -3,6 +3,7 @@ from ui_menu import ui_get_user_input
 from main_kitchen_storage import kitchen_storage_ui
 from create_recipe import create_recipe_part
 from shopping_list2 import *
+import file_reader
 
 kitchen_storage = storage.Kitchen_Storage()
 
@@ -33,3 +34,6 @@ while True:
     # just in case
     else:
         print('Invalid input!\nPlease try again')
+
+    x = file_reader.read_txt(storage.RECIPE_STORAGE)
+    print(x)
